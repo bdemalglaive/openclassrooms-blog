@@ -1,0 +1,18 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': loveIts >0,
+                'list-group-item-danger': loveIts < 0}">
+
+    <h3 [ngClass]="{
+      'text-success': loveIts >0,
+      'text-danger': loveIts <0 }">
+        <small class="pull-right"><em>{{ createdAt|date: 'MM/dd/yyyy h:mm a'|uppercase }}</em></small>
+      {{title }}
+    </h3>
+
+    <p>{{ content }}</p>
+
+    <div>
+      <button type="button" class="btn btn-success" (click)="onLove()">Love it !</button>&nbsp;
+      <button type="button" class="btn btn-danger" (click)="onUnLove()">Don't love it !!!</button>
+    </div>
+</li>
